@@ -123,7 +123,7 @@ function fnGoPage(index){
   <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
   <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
   
-</div> <!-- tab-content -->
+</div> <!-- tab-content123 -->
 
 <div>
 	<div>오늘의 추천웹툰</div>

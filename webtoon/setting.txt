@@ -1,5 +1,5 @@
 깃 토큰: 유효기간 2023.07.01
-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
+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
 
 깃허브 셋팅 가이드
 https://kitty-geno.tistory.com/81
