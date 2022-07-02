@@ -7,7 +7,7 @@
 <%
    request.setCharacterEncoding("UTF-8");
    String v_loginYn =  request.getParameter("logout")==null?"N":request.getParameter("logout");
-   //if(session != null && v_loginYn.equals("N")){ //&& v_loginYn.equals("N")123
+   //if(session != null && v_loginYn.equals("N")){ //&& v_loginYn.equals("N")fff
 	LoginVO lv = (LoginVO)session.getAttribute("SESSION");  
    if(lv != null){
 		out.println("::로그인됨::::"+lv.getLogin_id());
