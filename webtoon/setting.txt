@@ -2,4 +2,4 @@
 
 깃허브 셋팅 가이드
 https://kitty-geno.tistory.com/81
-t
+테스트 파일 
