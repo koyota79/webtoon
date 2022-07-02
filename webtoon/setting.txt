@@ -1,4 +1,4 @@
-깃 토큰:
+깃 토큰: 유효기간 2023.07.01
 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
 
 깃허브 셋팅 가이드
