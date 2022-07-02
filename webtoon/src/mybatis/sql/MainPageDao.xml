@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+   
+<mapper namespace="com.hyem.wt.mainpage.MainPageDao">
+      <select id="selectTodayWebToonList" resultType="HashMap" parameterType="HashMap"> 
+            SELECT ID ,ITEM_TITLE ,CONTENT ,THUMBNAIL 
+             FROM tb_item_m WHERE ITEM_TYPE = 'WT' AND DELETE_FLG = 'N' AND USE_YN = 'Y'
+      </select>
+
+</mapper>

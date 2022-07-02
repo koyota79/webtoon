@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+   
+<mapper namespace="com.hyem.wt.view.ItemDetailViewDao">
+      <select id="selectItemDetailViewList" resultType="HashMap" parameterType="HashMap"> 
+        SELECT A.ID ,A.ITEM_TITLE,A.ITEM_TYPE 
+			  ,B.ITEM_SEQ ,B.ITEM_NM ,B.ITEM_IMG
+		  FROM tb_item_m a
+		INNER JOIN tb_item_s B
+		   ON A.ID = B.ITEM_ID
+		WHERE A.ID = #{item_id}
+      </select>
+
+</mapper>

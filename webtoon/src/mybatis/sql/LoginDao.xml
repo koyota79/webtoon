@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+   
+<mapper namespace="com.hyem.wt.login.LoginDao">
+      <select id="selectLoginChk" resultType="HashMap" parameterType="HashMap">
+            SELECT * FROM tb_users WHERE LOGIN_ID = #{login_id} AND PASSWORD = #{password}
+      </select>
+      
+      <select id="selectLoginChkVO" resultType="com.hyem.wt.VO.LoginVO" parameterType="HashMap">
+            SELECT login_id ,password ,session_key ,level ,adult ,last_login_date 
+            FROM tb_users WHERE LOGIN_ID = #{login_id} AND PASSWORD = #{password}
+      </select>
+      
+      <insert id="insertLoginTempInfo"  parameterType="HashMap">
+      	INSERT INTO TB_USERS(
+      		USER_ID 
+      	   ,OPER_SYS
+      	)VALUES(
+      		#{USER_ID}
+      	   ,#{OPER_SYS}
+      	)
+      </insert>
+</mapper>
