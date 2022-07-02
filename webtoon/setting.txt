@@ -1,6 +1,9 @@
 깃 토큰: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
 
+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
+
 깃허브 셋팅 가이드
 https://kitty-geno.tistory.com/81
 테스트 파일 
 커밋이 안되냐
+ss
