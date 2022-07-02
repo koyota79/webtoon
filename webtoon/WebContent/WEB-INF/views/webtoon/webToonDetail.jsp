@@ -14,7 +14,7 @@
 <body>
 <ul class="list-group">
 	<li class="list-group-item webtoonView">
-		<img src="/resources/images/item/a.jpg" width="65" height="65"> first item
+		<img src="/resources/images/item/a.jpg" width="65" height="65"> first item page
 	</li>
 </ul>
 </body>
