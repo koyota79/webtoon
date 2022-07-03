@@ -2,24 +2,12 @@
 <%@page import="java.util.HashMap"%>
 <%@page import="java.util.ArrayList"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page import="com.hyem.wt.VO.*"%>
-
-<%
-   request.setCharacterEncoding("UTF-8");
-   String v_loginYn =  request.getParameter("logout")==null?"N":request.getParameter("logout");
-   //if(session != null && v_loginYn.equals("N")){ //&& v_loginYn.equals("N")123
-	LoginVO lv = (LoginVO)session.getAttribute("SESSION");  
-   if(lv != null){
-		out.println("::로그인됨::::"+lv.getLogin_id());
-   }else{
-	   out.println(":::로그아웃  시켜야함::"); 
-   }
-%>
+<jsp:include page="/WEB-INF/views/top.jsp"></jsp:include>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<jsp:include page="/resources/inc/default_inc.jsp"></jsp:include>
-<!-- <script src="//code.jquery.com/jquery.min.js"></script> -->
+<%-- <jsp:include page="/resources/inc/default_inc.jsp"></jsp:include> --%>
+<script src="//code.jquery.com/jquery.min.js"></script>
 <style>
 .wt-title{
 	font-size:  13px;
@@ -29,33 +17,18 @@
 	color:#8c8888
 }
 </style>
-<script>
-function fnGoPage(index){
-	location.href = "/webToonDetail.do";
-	//테이블 tb_item_m 이용해서 리스트 뿌리기
-	
+<script type="text/javascript">
+function fnGoPage(id){	
+	$("#webtoon_id").val(id);	
+	$("#form1").prop('action', "./webToonDetail.do").submit(); 
 }
 </script>
 
 </head>
 <body>
 <div class="container">
-<div class="top_menu">
-	<ul class="nav justify-content-center">
-	  <li class="nav-item">
-	    <a class="nav-link active" href="#">웹툰</a>
-	  </li>
-	  <li class="nav-item">
-	    <a class="nav-link" href="#">단행본</a>
-	  </li>
-	  <li class="nav-item">
-	    <a class="nav-link" href="#">몽땅무</a>
-	  </li>
-	  <li class="nav-item">
-	    <a class="nav-link" href="#">자유이용관</a>
-	  </li> 
-	</ul>
-</div>
+<form action="#" name = "form1" id = "form1" method = "post">
+<input type="hidden" name="webtoon_id" id="webtoon_id" value="" />
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -101,7 +74,7 @@ function fnGoPage(index){
  		<table class="table" border="1"> 
  			<tbody>
  				<tr> 
- 					<td><a hreft="#none" onclick="fnGoPage(1);" style="cursor:pointer;"><img src="/resources/images/item/a1.jpg" class="img-rounded" alt="Cinque Terre" width="82" height="80"></a></td> 
+ 					<td><img src="/resources/images/item/a1.jpg" class="img-rounded" alt="Cinque Terre" width="82" height="80"></td> 
  					<td><img src="/resources/images/item/a2.jpg" class="img-rounded" alt="Cinque Terre" width="82" height="80"></td> 
  					<td><img src="/resources/images/item/a3.jpg" class="img-rounded" alt="Cinque Terre" width="82" height="80"></td>
  					<td><img src="/resources/images/item/a4.jpg" class="img-rounded" alt="Cinque Terre" width="82" height="80"></td>
@@ -123,7 +96,7 @@ function fnGoPage(index){
   <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
   <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
   
-</div> <!-- tab-content -->
+</div> <!-- tab-content123 -->
 
 <div>
 	<div>오늘의 추천웹툰</div>
@@ -133,15 +106,17 @@ function fnGoPage(index){
 			 <c:forEach items="${wtList}" var="list">
 	  			<td class="todayWtList">
 					<div>
-						<img src="/resources/images/item/${list.THUMBNAIL}" class="img-rounded" alt="${list.ITEM_TITLE}" width="82" height="80">
-						<input type="hidden" name="item_id" value="${list.ID}">
-			
-						<div class="wt-title">
-							${list.ITEM_TITLE}
-						</div>
-						<div class="wt-name">
-							백합
-						</div>
+						<a hreft="#none" onclick="fnGoPage('${list.ID}');" style="cursor:pointer;">
+							<img src="/resources/images/item/${list.THUMBNAIL}" class="img-rounded" alt="${list.ITEM_TITLE}" width="82" height="80">
+							<input type="hidden" name="item_id" value="${list.ID}">
+				
+							<div class="wt-title">
+								${list.ITEM_TITLE}
+							</div>
+							<div class="wt-name">
+								백합
+							</div>
+						</a>
 					</div>
 				</td>
 			 </c:forEach>
@@ -149,7 +124,7 @@ function fnGoPage(index){
 	  </table>
 	</div>
 </div>
-
+</form>
 </div> <!-- container  -->
 <script type="text/javascript">
 $( document ).ready(function() {
