@@ -2,7 +2,7 @@
 -- 호스트:                          127.0.0.1
 -- 서버 버전:                        10.3.10-MariaDB - mariadb.org binary distribution
 -- 서버 OS:                        Win64
--- HeidiSQL 버전:                  9.4.0.5125
+-- HeidiSQL 버전:                  9.4.0.5125 
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
