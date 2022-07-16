@@ -36,7 +36,7 @@ public class MainPageController {
 	
 	@RequestMapping("/todayWebToonList.json")
 	public ModelAndView todayWebToonList(@RequestParam HashMap<String,Object> param, Model model) throws Exception {
-	    // µ¥ÀÌÅÍ¿Í ºä¸¦ µ¿½Ã¿¡ ¼³Á¤ÀÌ °¡´É
+	    // ï¿½ï¿½ï¿½ï¿½ï¿½Í¿ï¿½ ï¿½ä¸¦ ï¿½ï¿½ï¿½Ã¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	    ModelAndView mv     = new ModelAndView();
     	ArrayList list 		= null;
 	    list = service.selectTodayWebToonList("selectTodayWebToonList" , param);

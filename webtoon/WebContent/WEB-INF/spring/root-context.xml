@@ -19,7 +19,7 @@
 		<property name="driverClass" value="org.mariadb.jdbc.Driver"></property>
 		<property name="url" value="jdbc:mariadb://127.0.0.1:3306/webtoon"></property>
 		<property name="username" value="root"></property>
-		<property name="password" value="akfldkelql!"></property>
+		<property name="password" value="8317qwas@@"></property>
 	</bean>
 	
 
